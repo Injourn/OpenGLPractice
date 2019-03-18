@@ -1,5 +1,9 @@
 #include <GLFW/glfw3.h>
+#include <stdlib.h>
+#include "SimpleDraw.h"
 
+void MakePointBig();
+void MakeLineBig();
 int main(void) {
 	GLFWwindow* window;
 
@@ -7,6 +11,7 @@ int main(void) {
 	if (!glfwInit())
 		return -1;
 
+	
 	/* Create a windowed mode window and its OpenGL context */
 	window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
 	if (!window) {
@@ -16,21 +21,17 @@ int main(void) {
 
 	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
-
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(window)) {
-		/* Render here */
 		glClear(GL_COLOR_BUFFER_BIT);
-		glPointSize(100.0);
-		glEnable(GL_POINT_SMOOTH);
-		glHint(GL_POINT_SMOOTH_HINT, GL_NICEST);
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		glBegin(GL_POINTS);
-		glVertex2f(1, 0);
-		glVertex2f(0, 1);
-		glVertex2f(0, 0);
-		glEnd();
+		/* Render here */
+		MakePointBig();
+		drawScene();
+
+		//Activates if the user presses the space bar.
+		if (PressSpacebar(window)) {
+			myKeyboardFunc();
+		}
 		/* Swap front and back buffers */
 		glfwSwapBuffers(window);
 
@@ -40,4 +41,19 @@ int main(void) {
 
 	glfwTerminate();
 	return 0;
+}
+
+void MakePointBig() {
+	glPointSize(10.0);
+	glEnable(GL_POINT_SMOOTH);
+	glHint(GL_POINT_SMOOTH_HINT, GL_NICEST);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+}
+void MakeLineBig() {
+	glLineWidth(10.0);
+	glEnable(GL_LINE_SMOOTH);
+	glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
