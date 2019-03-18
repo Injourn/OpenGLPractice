@@ -260,4 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /390OpenGLStuff/include/GLFW
-/390OpenGLStuff
+/390OpenGLStuff/lib-vc2015
