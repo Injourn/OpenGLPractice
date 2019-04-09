@@ -25,9 +25,14 @@ int main(void) {
 	while (!glfwWindowShouldClose(window)) {
 		glClear(GL_COLOR_BUFFER_BIT);
 		/* Render here */
-		MakePointBig();
-		drawScene();
-
+		//MakePointBig();
+		
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		glShadeModel(GL_FLAT);
+		//drawScene();
+		//Exercise3();
+		Exercise5();
+		
 		//Activates if the user presses the space bar.
 		if (PressSpacebar(window)) {
 			myKeyboardFunc();

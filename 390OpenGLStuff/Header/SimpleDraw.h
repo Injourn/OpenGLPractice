@@ -23,3 +23,6 @@ void drawScene(void);
 
 void initRendering();
 void resizeWindow(int w, int h);
+
+void Exercise3();
+void Exercise5();

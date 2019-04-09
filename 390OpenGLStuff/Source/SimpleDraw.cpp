@@ -123,7 +123,152 @@ void drawScene()
 	}
 
 }
+void Exercise3() {
+	glBegin(GL_TRIANGLE_FAN);
+	glColor3f(0, 1, 1);
+	glVertex2d(0, 0);
+	glVertex2d(0, .6);
+	glVertex2d(.07,.17);
 
+	glColor3f(0, 1, 0);
+	glVertex2d(.4, .2);
+
+	glColor3f(0, 1, 1);
+	glVertex2d(.1, -.02);
+
+	glColor3f(0, 1, 0);
+	glVertex2d(.3, -.5);
+	glColor3f(0, 1, 1);
+	glVertex2d(0, -.15);
+
+	glColor3f(0, 1, 0);
+	glVertex2d(-.3, -.5);
+	glColor3f(0, 1, 1);
+	glVertex2d(-.1, -.02);
+	
+	glColor3f(0, 1, 0);
+	glVertex2d(-.4, .2);
+	glColor3f(0, 1, 1);
+	glVertex2d(-.07, .17);
+
+	glColor3f(0, 1, 0);
+	glVertex2d(0, .6);
+	glEnd();
+
+}
+void Exercise5() {
+	glBegin(GL_QUADS);
+	//Front Face
+	glVertex3d(-.5, .5,1);
+	glVertex3d(-.5, -.5,1);
+	glVertex3d(.5, -.5, 1);
+	glVertex3d(.5, .5, 1);
+
+	//Right Face
+	glColor3f(0, 1, 0);
+	glVertex3d(.5, .5, 1);
+	glVertex3d(.5, -.5, 1);
+	glVertex3d(.5, -.5, 0);
+	glVertex3d(.5, .5, 0);
+
+	//Back Face
+	glColor3f(0, 1, 1);
+	glVertex3d(.5, .5, 0);
+	glVertex3d(.5, -.5, 0);
+	glVertex3d(-.5, -.5, 0);
+	glVertex3d(-.5, .5, 0);
+
+	//Left Face
+	glColor3f(1, 1, 0);
+	glVertex3d(-.5, .5, 0);
+	glVertex3d(-.5, -.5, 0);
+	glVertex3d(-.5, -.5, 1);
+	glVertex3d(-.5, .5, 1);
+
+	//Top Face
+	glColor3f(0, 0, 0);
+	glVertex3d(-.5, .5, 1);
+	glVertex3d(.5, .5, 1);
+	glVertex3d(-.5, .5, 0);
+	glVertex3d(.5, .5, 0);
+
+	//Bottom Face
+	glColor3f(0, 0, 1);
+	glVertex3d(-.5, -.5, 1);
+	glVertex3d(.5, -.5, 1);
+	glVertex3d(-.5, -.5, 0);
+	glVertex3d(.5, -.5, 0);
+	glEnd();
+}
+void Exercise6() {
+	glBegin(GL_QUAD_STRIP);
+	//Top Face
+	glVertex3d(-.5, .5, 1);
+	glVertex3d(-.5, -.5, 1);
+	glVertex3d(.5, -.5, 1);
+	glVertex3d(.5, .5, 1);
+
+	//Right Face
+	glColor3f(0, 1, 0);
+	glVertex3d(.5, .5, 0);
+	glVertex3d(.5, -.5, 0);
+
+	//Back Face
+	glColor3f(0, 1, 1);
+	glVertex3d(-.5, .5, 0);
+	glVertex3d(-.5, -.5, 0);
+	glEnd();
+
+	glBegin(GL_QUAD_STRIP);
+	//Top Face
+	glColor3f(0, 0, 0);
+	glVertex3d(.5, .5, 1);
+	glVertex3d(.5, .5, 0);
+	glVertex3d(-.5, .5, 1);
+	glVertex3d(-.5, .5, 0);
+
+	//Left Face
+	glColor3f(1, 1, 0);
+	glVertex3d(-.5, -.5, 1);
+	glVertex3d(-.5, -.5, 0);
+
+	//Bottom Face
+	glColor3f(0, 0, 1);
+	glVertex3d(.5, -.5, 1);
+	glVertex3d(.5, -.5, 0);
+	glEnd();
+}
+void Exercise7() {
+	//Goes Clockwise, might fix later
+	glBegin(GL_TRIANGLE_STRIP);
+	glVertex3d(-.5, -.5, 1);
+	glVertex3d(-.5, -.5, 0);
+
+	//Left face
+	glVertex3d(-.5, .5, 0);
+	glVertex3d(-.5, .5, 1);
+	//Front face
+	glVertex3d(.5, .5, 1);
+	glVertex3d(.5, -.5, 1);
+	//Bottom Face
+	glVertex3d(.5, -.5, 0);
+	glVertex3d(-.5, -.5, 0);
+	glEnd();
+
+	glBegin(GL_TRIANGLE_STRIP);
+	glVertex3d(.5, .5, 0);
+	glVertex3d(.5, .5, 1);
+	//Top face
+	glVertex3d(-.5, .5, 1);
+	glVertex3d(-.5, .5, 0);
+	//Back face
+	glVertex3d(-.5, -.5, 0);
+	glVertex3d(.5, -.5, 0);
+	//Left face
+	glVertex3d(.5, -.5, 1);
+	glVertex3d(.5, .5, 1);
+	glEnd();
+}
 // Initialize OpenGL's rendering modes
 void initRendering()
 {
